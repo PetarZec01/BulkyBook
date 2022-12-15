@@ -31,6 +31,8 @@ It will be easier to modfy the instace class, we modify it only in the class and
 <br />
 <b>3. FILES AND FOLDERS:</b><br />
 
+<img src="https://raw.githubusercontent.com/PetarZec01/BulkyBook/master/images/filesandfolders.png?token=GHSAT0AAAAAAB3KEA6LZSGVLRGDOTHV2EMEY43UZHQ" width="200px">
+
 - <b>Project file</b> contains the .NET version in the PropertyGroup and what packages we are using in the project are stored in the ItemGroup
 - <b>Properties\launchSettings.json</b> which contains different profiles in which we can run our application (what port is used, where is it hosted)
 - <b>wwwroot</b> contains static files (css, images, js code, libraries), does not contain C# files
