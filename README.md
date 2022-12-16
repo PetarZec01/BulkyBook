@@ -66,4 +66,13 @@ IActionResult is the generic type that implements all of the other return types.
 ActionResult is a result of action methods/pages or return types of action methods/page handlers.
 Action result is a parent class for many of the derived classes that have associated helpers.
 The IActionResult return type is appropriate when there is multiple ActionResult return types that are possible in an action method.
-Working with Razor we can return Content, File, NotFound, Page, Partial, Redirection. The MVC Application can return View, PartialView, Redirect, RedirectToAction, RedirectToRoute, Content, Json, Javascript, File, (empty). And all can be returned to IActionResult, but if use each Result interfaces seperately it will not be compatible for every case of return.
+Working with Razor we can return Content, File, NotFound, Page, Partial, Redirection. The MVC Application can return View, PartialView, Redirect, RedirectToAction, RedirectToRoute, Content, Json, Javascript, File, (empty). And all can be returned to IActionResult, but if use each Result interfaces seperately it will not be compatible for every case of return.<br/>
+
+<b>9. Database</b><br/>
+Our project will need a database for our data. SQL Server will be used to create one and we will use EntityFramework which is a spot editor that will help us with all data related operations and to manipulate the data layer. Every table in the database needs a corresponding model for the code first migration. .NET team made special annotations with which we can add restrictions to the sql script. Over the property we put in [] (example [Key]) we add these annotations with using System.ComponentModel.DataAnnotations. We need to create a Data folder where we will put our context inside the DbContext we need to create our Application DbContext class which will have a base class of DbContext this class belongs to EntityFrameworkCore. A constructor is required to create the DbContext, our application context has to accept DbContextOptions<{class_name_of_our_dbcontext}> and those options need to be passed to the base class of DbContext. After that we need to make a DbSet method for our model (DbSet<{name_of_model}>). We use code first creation so we don't have to do much database managment behind the scenes. We connect our connection string and DbContext in the Program.cs where we define a service that our application will use for creation and managing the database. We will need to install EntityFrameworkCore.SqlServer package then we add the service: <br/>
+
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(
+builder.Configuration.GetConnectionString("DefaultConnection")
+));<br/>
+
+We get our connection string with builder.Configuration
