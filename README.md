@@ -1,12 +1,12 @@
 # BulkyBook
 
 This is tutorial project for ASP.NET C# Core MVC <br />
-For database creation EntityFrameworkCore and EntityFrameworkCore.SqlServer was used<br />
 
 Tutorial link: https://www.youtube.com/watch?v=hZ1DASYd9rk&t=0s<br />
 
 I built using this tutorial a category crud project.<br />
 Tools used: .NET 6, Visual Studio 2022, SSMS 2018, SQL Server<br />
+For database creation EntityFrameworkCore and EntityFrameworkCore.SqlServer were used.<br />
 
 <b>1. .NET Core:</b> <br />
 This is the biggest change Microsoft .NET made. First introduced Webforms then .NET MVC but it was only runnable on Windows platforms.<br />
@@ -30,8 +30,6 @@ Dependency injection will automaticly manage, dispose, implement and instance of
 It will be easier to modfy the instace class, we modify it only in the class and it will automaticly use the new implementation on all pages<br />
 <br />
 <b>3. FILES AND FOLDERS:</b><br />
-
-<img src="https://raw.githubusercontent.com/PetarZec01/BulkyBook/master/images/filesandfolders.png?token=GHSAT0AAAAAAB3KEA6LZSGVLRGDOTHV2EMEY43UZHQ" />
 
 - <b>Project file</b> contains the .NET version in the PropertyGroup and what packages we are using in the project are stored in the ItemGroup
 - <b>Properties\launchSettings.json</b> which contains different profiles in which we can run our application (what port is used, where is it hosted)
@@ -61,4 +59,11 @@ If we have a controller all of its view and UI pages will be placed inside the V
 We have controller folders inside the Views and they contain Views for your action methods as previously mentioned. Now we have a Shared folder this is similar to user components in classic C#. It is basically views that you can call within a view in multiple places in your application. We have a special partial View that is called <b>\_Layout.cshtml</b> it is the default master page of your application. So if open that up it at first we will have a header, footer, basic javascript, the head where we write our titles, css, etd, and we will have a div where we will render the body (@RenderBody()) if the action method views don't specify their own defualt master page \_Layout will be used. Next we have <b>\_ValidationScriptsPartial.cshtml</b> which is the partial view where we are adding scripts for validation. If we want to use validations on one of the action method we will include these partial views on those pages. We also have an error partial view <b>(Error.cshtml)</b> it will be used to display error if we encoutner them. Now if we go out of the Shared folder. We are left with two files \_ViewImports and \_ViewStart. <b>ViewImports</b> we put global namespaces here so if we want to access a namespace in all of the pages we add it here so it can accessable. But the important thing we have here is <b>TagHelpers</b>. These are bindings provided that look like HTML tags. But they are special tags adopted from other languages. (example. when clicking on a button Privacy (whose route needs to be /home/privacy) this link is provided by the special anchor tag that has taghelpers asp-area="" asp-controller="Home" asp-action="Privacy"). The last file is ViewStart where we define the master page which when starting a project by default is \_Layout. We can set different default master pages for seperate pages we just define them in the page file.
 
 <b>7. Tag Helpers</b><br/>
-Microsoft looked at languages like Angular or React. So they wanted to implement Angular type experiences in the new .NET Core. Tag-Helpers enable server-side rendering, server-side code participates in creating and rendering HTML elements in Razor files. They are natural to use and focused around the HTML element
+Microsoft looked at languages like Angular or React. So they wanted to implement Angular type experiences in the new .NET Core. Tag-Helpers enable server-side rendering, server-side code participates in creating and rendering HTML elements in Razor files. They are natural to use and focused around the HTML element. <br/>
+
+<b>8. Action Result</b><br/>
+IActionResult is the generic type that implements all of the other return types. (for Views in MVC or for Pages in Razor).
+ActionResult is a result of action methods/pages or return types of action methods/page handlers.
+Action result is a parent class for many of the derived classes that have associated helpers.
+The IActionResult return type is appropriate when there is multiple ActionResult return types that are possible in an action method.
+Working with Razor we can return Content, File, NotFound, Page, Partial, Redirection. The MVC Application can return View, PartialView, Redirect, RedirectToAction, RedirectToRoute, Content, Json, Javascript, File, (empty). And all can be returned to IActionResult, but if use each Result interfaces seperately it will not be compatible for every case of return.
