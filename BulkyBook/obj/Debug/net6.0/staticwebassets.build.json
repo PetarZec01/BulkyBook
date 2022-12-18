@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TshafRC23BCBs4PK3ur0psYHch9/eWlGovp7OcIkqWA=",
+  "Hash": "nTogBrV2UTjcBg/P3I2P2POWt0AJVtaZM89nrWyCZgY=",
   "Source": "BulkyBook",
   "BasePath": "_content/BulkyBook",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\petar\\Documents\\Tutorials\\BulkyBook\\BulkyBook\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BulkyBook.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\petar\\Documents\\Tutorials\\BulkyBook\\BulkyBook\\wwwroot\\css\\BootsWatchTheme.css",
+      "SourceId": "BulkyBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petar\\Documents\\Tutorials\\BulkyBook\\BulkyBook\\wwwroot\\",
+      "BasePath": "_content/BulkyBook",
+      "RelativePath": "css/BootsWatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BootsWatchTheme.css"
     },
     {
       "Identity": "C:\\Users\\petar\\Documents\\Tutorials\\BulkyBook\\BulkyBook\\wwwroot\\css\\site.css",
