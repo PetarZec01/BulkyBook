@@ -7,9 +7,10 @@ Tutorial link: https://www.youtube.com/watch?v=hZ1DASYd9rk&t=0s<br />
 I built using this tutorial a category crud project.<br />
 Tools used: .NET 6, Visual Studio 2022, SSMS 2018, SQL Server<br />
 For database creation EntityFrameworkCore and EntityFrameworkCore.SqlServer were used.<br />
-To customise the look of our project we will use Bootstap and download a theme from Bootswatch and add icons from Bootstrap Icons. <br />
+To customise the look of our project we will use Bootstap and download a theme from Bootswatch and add icons from Bootstrap Icons. Also we will use custom notifictations from toastr <br />
 Theme: https://bootswatch.com/morph/
 Icons: https://icons.getbootstrap.com/
+Alerts: https://github.com/CodeSeven/toastr
 
 <b>1. .NET Core:</b> <br />
 This is the biggest change Microsoft .NET made. First introduced Webforms then .NET MVC but it was only runnable on Windows platforms.<br />
@@ -83,4 +84,4 @@ We get our connection string with builder.Configuration.
 After we need our migrations we will need an EntityFrameworkCore.Tools package to run migrations in the package manager console which can be accessed (Tools -> NuGetPackageManager -> Console). After we make a migration with command add-migration {name_of_migration}, a folder will be created called Migrations. Inside the file that is contained in the Migrations folder we have two methods called Up and Down. Up method defines what needs to happen inside the migration and the Down is to rollback the changes. EntityFramework will automatically make a sql query and execute everything we need<br/>
 
 <b>10. Temp data</b><br/>
-If we want to display some alerts when someone executes an operation on some data in our database we have temp data. Temp data has one purpose only to store something for one request which is perfect for displaying alerts. (sintax: TempData["{key}"]). To display data on every page without calling it on everypage we can create a partial view (usually in Shared folder).
+If we want to display some alerts when someone executes an operation on some data in our database we have temp data. Temp data has one purpose only to store something for one request which is perfect for displaying alerts. (sintax: TempData["{key}"]). To display data on every page without calling it on everypage we can create a partial view (usually in Shared folder).<br/>
