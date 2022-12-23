@@ -63,6 +63,7 @@ We have controller folders inside the Views and they contain Views for your acti
 
 <b>7. Tag Helpers</b><br/>
 Microsoft looked at languages like Angular or React. So they wanted to implement Angular type experiences in the new .NET Core. Tag-Helpers enable server-side rendering, server-side code participates in creating and rendering HTML elements in Razor files. They are natural to use and focused around the HTML element. <br/>
+Documentation: https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-7.0 <br />
 
 <b>8. Action Result</b><br/>
 IActionResult is the generic type that implements all of the other return types. (for Views in MVC or for Pages in Razor).
@@ -79,4 +80,7 @@ builder.Configuration.GetConnectionString("DefaultConnection")
 ));<br/>
 
 We get our connection string with builder.Configuration.
-After we need our migrations we will need an EntityFrameworkCore.Tools package to run migrations in the package manager console which can be accessed (Tools -> NuGetPackageManager -> Console). After we make a migration with command add-migration {name_of_migration}, a folder will be created called Migrations. Inside the file that is contained in the Migrations folder we have two methods called Up and Down. Up method defines what needs to happen inside the migration and the Down is to rollback the changes. EntityFramework will automatically make a sql query and execute everything we need
+After we need our migrations we will need an EntityFrameworkCore.Tools package to run migrations in the package manager console which can be accessed (Tools -> NuGetPackageManager -> Console). After we make a migration with command add-migration {name_of_migration}, a folder will be created called Migrations. Inside the file that is contained in the Migrations folder we have two methods called Up and Down. Up method defines what needs to happen inside the migration and the Down is to rollback the changes. EntityFramework will automatically make a sql query and execute everything we need<br/>
+
+<b>10. Temp data</b><br/>
+If we want to display some alerts when someone executes an operation on some data in our database we have temp data. Temp data has one purpose only to store something for one request which is perfect for displaying alerts. (sintax: TempData["{key}"]). To display data on every page without calling it on everypage we can create a partial view (usually in Shared folder).
